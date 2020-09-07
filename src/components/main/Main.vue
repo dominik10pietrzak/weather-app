@@ -3,7 +3,7 @@
     <div class="top">
       <div class="background" v-if="weather">
         <img
-          v-if="time < 21 && time > 6"
+          v-if="time <= 21 && time >= 6"
           v-bind:src="require(`../../assets/${weather.description}.jpg`)"
         />
         <img
