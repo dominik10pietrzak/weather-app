@@ -25,7 +25,7 @@ export default {
   },
   methods: {
     async fetchWeather(value) {
-      const API = `http://api.openweathermap.org/data/2.5/forecast?q=${value}&appid=${this.APIKey}&units=metric`;
+      const API = `https://api.openweathermap.org/data/2.5/forecast?q=${value}&appid=${this.APIKey}&units=metric`;
 
       await fetch(API)
         .then((response) => {
