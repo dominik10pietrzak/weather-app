@@ -1,0 +1,53 @@
+.forecast {
+  width: 100%;
+  height: 53%;
+  padding: 0 3rem;
+  background-color: #fff;
+  border-radius: 0 0 25px 25px;
+  box-shadow: inset 0 7px 25px -7px rgba(0, 0, 0, 0.4);
+
+  .container {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: space-around;
+
+    .child {
+      width: 6rem;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+
+      img {
+        width: 3rem;
+        height: 3rem;
+      }
+
+      h3 {
+      }
+
+      span {
+        color: rgb(58, 71, 78);
+      }
+    }
+  }
+}
+
+@media only screen and (max-device-width: 414px) and(max-device-height: 823px) {
+  .forecast {
+    height: 35%;
+    padding: 0.25rem;
+    .container {
+      .child {
+        h2 {
+          font-size: 1.15rem;
+        }
+        img {
+          width: 2rem;
+          height: 2rem;
+        }
+      }
+    }
+  }
+}
