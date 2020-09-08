@@ -5,12 +5,17 @@
   background-color: #fff;
   border-radius: 0 0 25px 25px;
   box-shadow: inset 0 7px 25px -7px rgba(0, 0, 0, 0.4);
+  transition: all 0.3s ease;
 
   .container {
     width: 100%;
     height: 100%;
     display: flex;
     justify-content: space-around;
+    transition: all 0.3s ease;
+    transition-delay: 0.4s;
+
+    opacity: 0;
 
     .child {
       width: 6rem;
@@ -24,9 +29,6 @@
         height: 3rem;
       }
 
-      h3 {
-      }
-
       span {
         color: rgb(58, 71, 78);
       }
@@ -34,20 +36,47 @@
   }
 }
 
-@media only screen and (max-device-width: 414px) and(max-device-height: 823px) {
+@media only screen and (max-device-width: 1024px) and(max-device-height: 1366px) {
   .forecast {
-    height: 35%;
-    padding: 0.25rem;
+    padding: 0;
+    border: none;
+
     .container {
+      padding: 0;
+      color: white;
+
       .child {
-        h2 {
-          font-size: 1.15rem;
-        }
-        img {
-          width: 2rem;
-          height: 2rem;
+        z-index: 2;
+
+        span {
+          color: white;
         }
       }
     }
+  }
+}
+
+@media only screen and (max-device-width: 414px) and(max-device-height: 823px) {
+  .forecast {
+    background-color: transparent;
+    height: 35%;
+
+    .container {
+      height: 100%;
+      .child {
+        h2 {
+          font-size: 1.05rem;
+          font-weight: lighter;
+        }
+        img {
+          width: 1.75rem;
+          height: 1.75rem;
+        }
+      }
+    }
+  }
+}
+@media only screen and (max-device-width: 375px) and(max-device-height: 667px) {
+  .forecast {
   }
 }

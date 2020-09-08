@@ -1,7 +1,7 @@
 <template>
-  <div class="main">
-    <div class="top">
-      <div class="background" v-if="weather">
+  <div class="main fade-in-bottom">
+    <div class="top content-hidden">
+      <div id="weather-image" class="background" v-if="weather">
         <img
           v-if="time < 21 && time > 6"
           v-bind:src="require(`../../assets/${weather.description}.jpg`)"
@@ -57,6 +57,17 @@ export default {
     const hour = date.getHours();
     this.time = hour;
     console.log(this.time);
+
+    setTimeout(() => {
+      document.querySelector(".main").style.opacity = 1;
+    }, 25);
+    // setTimeout(() => {
+    //   document.getElementById("weather-image").style.opacity = 0.7;
+    // }, 150);
+    setTimeout(() => {
+      document.querySelector(".main .top").classList.remove("content-hidden");
+      document.querySelector(".main .forecast .container").style.opacity = 1;
+    }, 350);
   },
 };
 </script>
