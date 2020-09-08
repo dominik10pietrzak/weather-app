@@ -37,16 +37,15 @@ export default {
         .then((response) => response.json())
         .then((data) => {
           let index = 0;
-          for (let i = 0; i < data.list.length; i++) {
+          for (let i = 0; i < 8; i++) {
             const hour = new Date(data.list[i].dt_txt).getHours();
             if (hour === 15) {
+              index = i;
               break;
-            } else {
-              index++;
             }
           }
 
-          return (this.weather = {
+          this.weather = {
             currentTemp: data.list[0].main.temp,
             city: data.city.name,
             humidity: data.list[0].main.humidity,
@@ -62,10 +61,11 @@ export default {
             descIn3D: data.list[index + 16].weather[0].main,
             descIn4D: data.list[index + 24].weather[0].main,
             descIn5D: data.list[index + 32].weather[0].main,
-          });
+          };
+          return this.weather;
         })
         .catch((err) => {
-          console.log(err);
+          alert(err);
         });
     },
   },

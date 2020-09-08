@@ -13,24 +13,24 @@
         />
       </div>
       <div class="left">
-        <h1 class="temp">{{Math.round(weather.currentTemp)}}&#xb0;</h1>
-        <h3 class="description">{{weather.description}}</h3>
+        <h1 class="temp">{{ Math.round(weather.currentTemp) }}&#xb0;</h1>
+        <h3 class="description">{{ weather.description }}</h3>
         <div class="details">
           <span>
             Humidity
             <br />
-            {{weather.humidity}} %
+            {{ weather.humidity }} %
           </span>
           <div class="line"></div>
           <span>
             Wind
             <br />
-            {{Math.round(weather.windSpeed)}} KM/H
+            {{ Math.round(weather.windSpeed) }} KM/H
           </span>
         </div>
       </div>
       <div class="right">
-        <h1>{{weather.city}}</h1>
+        <h1>{{ weather.city }}</h1>
         <div class="line"></div>
       </div>
     </div>
@@ -56,14 +56,10 @@ export default {
     const date = new Date();
     const hour = date.getHours();
     this.time = hour;
-    console.log(this.time);
 
     setTimeout(() => {
       document.querySelector(".main").style.opacity = 1;
     }, 25);
-    // setTimeout(() => {
-    //   document.getElementById("weather-image").style.opacity = 0.7;
-    // }, 150);
     setTimeout(() => {
       document.querySelector(".main .top").classList.remove("content-hidden");
       document.querySelector(".main .forecast .container").style.opacity = 1;
