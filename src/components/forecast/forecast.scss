@@ -39,7 +39,9 @@
 @media only screen and (max-device-width: 1024px) and(max-device-height: 1366px) {
   .forecast {
     padding: 0;
+    background-color: transparent;
     border: none;
+    height: 35%;
 
     .container {
       padding: 0;
@@ -58,7 +60,6 @@
 
 @media only screen and (max-device-width: 414px) and(max-device-height: 823px) {
   .forecast {
-    background-color: transparent;
     height: 35%;
 
     .container {
@@ -76,6 +77,30 @@
     }
   }
 }
+
+@media only screen and (max-device-width: 823px) and (max-height: 414px) and (orientation: landscape) {
+  .forecast {
+    height: 100%;
+    width: 65%;
+
+    .container {
+      .child {
+        h2 {
+          font-size: 1rem;
+        }
+        img {
+          width: 1.75rem;
+          height: 1.75rem;
+        }
+
+        span {
+          font-size: 0.9rem;
+        }
+      }
+    }
+  }
+}
+
 @media only screen and (max-device-width: 375px) and(max-device-height: 667px) {
   .forecast {
   }
